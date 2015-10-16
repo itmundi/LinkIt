@@ -1,0 +1,17 @@
+{
+    "name": "itmundi/linkit",
+    "description": "Link fieldtype for Craft",
+    "authors": [
+        {
+            "name": "Gijs Stegehuis",
+            "email": "g.stegehuis@itmundi.nl",
+            "homepage": "http://www.itmundi.nl",
+            "role": "Developer"
+        }
+    ],
+    "license": "MIT",
+    "type": "craft-plugin",
+    "require": {
+        "composer/installers": "~1.0"
+    }
+}
