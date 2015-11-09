@@ -352,10 +352,11 @@ class Linkit_LinkitFieldType extends BaseFieldType
 				{
 					$entryCriteria->id = false;
 				}
+                $entryCriteria->locale = $this->getTargetLocale('Entry');
 				$value['entryCriteria'] = $entryCriteria;
 
-				
-				
+
+
 				// Process Asset Field - Criteria
 				$assetCriteria = craft()->elements->getCriteria(ElementType::Asset);
 				if($value['asset'] && $value['type'] == 'asset')
@@ -373,7 +374,8 @@ class Linkit_LinkitFieldType extends BaseFieldType
 				{
 					$assetCriteria->id = false;
 				}
-				$value['assetCriteria'] = $assetCriteria;	
+                $assetCriteria->locale = $this->getTargetLocale('Asset');
+				$value['assetCriteria'] = $assetCriteria;
 
 
 
@@ -394,16 +396,17 @@ class Linkit_LinkitFieldType extends BaseFieldType
 				{
 					$categoryCriteria->id = false;
 				}
-				$value['categoryCriteria'] = $categoryCriteria;					
-					
-				
-				/* 
-				Alternate Version Added from BaseElementFieldType - Do we need all this?	
-			
+                $categoryCriteria->locale = $this->getTargetLocale('Category');
+				$value['categoryCriteria'] = $categoryCriteria;
+
+
+				/*
+				Alternate Version Added from BaseElementFieldType - Do we need all this?
+
 				$entryCriteria = craft()->elements->getCriteria(ElementType::Entry);
 				$entryCriteria->locale = $this->getEntryTargetLocale();
 				$entryCriteria->limit = null;
-				
+
 				if($value['entry'])
 				{
 					// $value will be an array of element IDs if there was a validation error
